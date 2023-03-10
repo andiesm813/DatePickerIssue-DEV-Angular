@@ -1,0 +1,136 @@
+<div class="column-layout group">
+  <h5 class="content">
+    Movie Premieres
+  </h5>
+  <div class="row-layout group_1"></div>
+  <igx-tabs [disableAnimation]="true" class="tabs">
+    <igx-tab-item [selected]="true" class="tab-item">
+      <igx-tab-header>
+        <span igxTabHeaderLabel>Now playing</span>
+      </igx-tab-header>
+      <igx-tab-content class="row-layout tab-item-content">
+        <igx-card type="outlined" *ngFor="let item of movieAppNowPlaying" class="card">
+          <igx-card-media height="180px">
+            <img [src]="item.MoviePoster" class="image" />
+          </igx-card-media>
+          <igx-card-header>
+            <h3 igxCardHeaderTitle>
+              {{ item.Name }}
+            </h3>
+            <h5 igxCardHeaderSubtitle>
+              {{ item.Genre }}
+            </h5>
+          </igx-card-header>
+          <igx-card-content class="body-content">
+            <p class="ig-typography__body-2 content">
+              {{ item.Description }}
+            </p>
+          </igx-card-content>
+          <igx-card-actions class="actions-content">
+            <button igxButton="flat" igxRipple class="user-input">
+              Button
+            </button>
+            <button igxButton="icon" igxRipple>
+              <igx-icon>
+                favorite
+              </igx-icon>
+            </button>
+            <button igxButton="icon" igxRipple>
+              <igx-icon>
+                bookmark
+              </igx-icon>
+            </button>
+            <button igxButton="icon" igxRipple>
+              <igx-icon>
+                share
+              </igx-icon>
+            </button>
+          </igx-card-actions>
+        </igx-card>
+      </igx-tab-content>
+    </igx-tab-item>
+    <igx-tab-item [disabled]="true" class="tab-item">
+      <igx-tab-header>
+        <span igxTabHeaderLabel>Coming Soon</span>
+      </igx-tab-header>
+      <igx-tab-content class="row-layout tab-item-content_1"></igx-tab-content>
+    </igx-tab-item>
+  </igx-tabs>
+</div>
+<div class="column-layout group_2">
+  <div class="column-layout group_3">
+    <p class="ig-typography__subtitle-2 content">
+      BUY TICKETS
+    </p>
+    <igx-select type="border" class="user-input">
+      <igx-prefix>
+        <igx-icon class="icon">
+          movie
+        </igx-icon>
+      </igx-prefix>
+      <igx-select-item value="Option">
+        Option
+      </igx-select-item>
+      <label igxLabel>Label/Placeholder</label>
+    </igx-select>
+    <igx-select type="border" class="user-input">
+      <igx-prefix>
+        <igx-icon class="icon">
+          location_on
+        </igx-icon>
+      </igx-prefix>
+      <igx-select-item value="Option">
+        Option
+      </igx-select-item>
+      <label igxLabel>Label/Placeholder</label>
+    </igx-select>
+    <igx-date-picker type="border" mode="dialog" [(ngModel)]="movieAppNowPlaying" class="date-picker">
+      <label igxLabel>Date</label>
+    </igx-date-picker>
+    <igx-select type="border" class="user-input">
+      <igx-prefix>
+        <igx-icon class="icon">
+          access_time
+        </igx-icon>
+      </igx-prefix>
+      <igx-select-item value="Option">
+        Option
+      </igx-select-item>
+      <label igxLabel>Label/Placeholder</label>
+    </igx-select>
+    <button igxButton="raised" igxRipple class="button">
+      Buy Tickets
+    </button>
+  </div>
+  <div class="column-layout group_3">
+    <p class="ig-typography__subtitle-2 content">
+      THEATRES NEAR YOU
+    </p>
+    <igx-list class="list">
+      <igx-list-item [isHeader]="false">
+        <span igxListThumbnail>
+          <igx-avatar initials="AB" [roundShape]="true" class="avatar"></igx-avatar>
+        </span>
+        <span igxListLineTitle>Movie Theatre Name</span>
+        <span igxListLineSubTitle>Location</span>
+      </igx-list-item>
+      <igx-list-item [isHeader]="false">
+        <span igxListThumbnail>
+          <igx-avatar initials="AB" [roundShape]="true" class="avatar_1"></igx-avatar>
+        </span>
+        <span igxListLineTitle>Movie Theatre Name</span>
+        <span igxListLineSubTitle>Location</span>
+      </igx-list-item>
+      <igx-list-item [isHeader]="false">
+        <span igxListThumbnail>
+          <igx-avatar initials="AB" [roundShape]="true" class="avatar_2"></igx-avatar>
+        </span>
+        <span igxListLineTitle>Movie Theatre Name</span>
+        <span igxListLineSubTitle>Location</span>
+      </igx-list-item>
+    </igx-list>
+    <button igxButton="raised" igxRipple class="button">
+      CHANGE LOCATION
+    </button>
+  </div>
+</div>
